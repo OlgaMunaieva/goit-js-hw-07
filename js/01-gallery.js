@@ -68,7 +68,7 @@ function createActivePicture(img) {
 
 /**
  * the function closes the active picture if the button "Esc" is pressed and there is an active picture on the screen, it works once
- * @param {String} activePicture string with HTML markup from the function createActivePicture
+ * @param {object} activePicture from the function createActivePicture
  */
 function closePictureButtonEsc(activePicture) {
   document.addEventListener(
