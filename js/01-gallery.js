@@ -30,27 +30,18 @@ galleryEl.addEventListener("click", showLargePicture);
  * @param {Object} event from EventListener
  */
 function showLargePicture(event) {
+  if (event.target.nodeName !== "IMG") {
+    return;
+  }
   event.preventDefault();
 
-  const ImgSource = getImgSource(event);
+  const ImgSource = event.target.dataset.source;
 
   const activePicture = createActivePicture(ImgSource);
 
   activePicture.show();
 
   closePictureButtonEsc(activePicture);
-}
-
-/**
- * the function checks if an event has occurred on the <img> tag and returns address of the big picture
- * @param {Object} event from EventListener
- * @returns address of the big picture selected by the event (param)
- */
-function getImgSource(event) {
-  if (event.target.nodeName !== "IMG") {
-    return;
-  }
-  return event.target.dataset.source;
 }
 
 /**
